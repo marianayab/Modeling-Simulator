@@ -156,7 +156,7 @@ const QueueSimulation = () => {
 
   return (
     <div>
-      <h1 style={{ display: "flex" }}>RANDOM NUMBER SIMULATOR</h1>
+      <h1>RANDOM NUMBER SIMULATOR</h1>
       <div style={{ flex: 1, marginBottom: "20px" }}>
         <h2>Simulation Parameters</h2>
         <div style={{ marginTop: "14px", fontSize: "18px" }}>
@@ -192,7 +192,7 @@ const QueueSimulation = () => {
           />
         </div>
         <button
-          style={{ marginTop: "20px", marginBottom: "16px" }}
+          style={{ marginTop: "20px", marginBottom: "16px", width: "auto" }}
           onClick={handleGenerateClick}
         >
           Generate
