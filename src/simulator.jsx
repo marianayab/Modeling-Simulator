@@ -17,6 +17,7 @@ const GanttChart = ({ ganttChartData }) => {
       <div
         style={{
           display: "flex",
+          flexWrap:"wrap",
           margin: "2rem",
           justifyContent: "center",
           backgroundColor: "rgb(19, 34, 34)",
@@ -149,7 +150,12 @@ const QueueSimulation = () => {
     }
 
     const utilization = arrivalRate / serviceRate;
-    setServerUtilization((utilization * 100).toFixed(2));
+    if (utilization<=1) {
+      setServerUtilization((utilization * 100).toFixed(2));
+    } else {
+      setServerUtilization(100);
+    }
+    
     setResults(simulationResults);
     setGanttChart(ganttChartData);
   };
@@ -277,9 +283,9 @@ const QueueSimulation = () => {
         </Table>
       </TableContainer>
       <div>
-        <GanttChart ganttChartData={ganttChart} />
+        <GanttChart style={{flexWrap:"wrap"}} ganttChartData={ganttChart} />
       </div>
-      <div style={{ fontSize: "20px", marginTop: "2em" }}>
+      <div style={{ fontSize: "20px", marginTop: "2em", marginBottom: "2em" }}>
         Server Utilization: {serverUtilization}%
       </div>
     </div>
